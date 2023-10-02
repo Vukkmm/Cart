@@ -2,7 +2,6 @@ package com.example.Cart.repository;
 
 import com.example.Cart.entity.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Repository;
 
 @Repository
