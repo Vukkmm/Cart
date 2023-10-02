@@ -1,5 +1,6 @@
 package com.example.Cart.controller;
 
+import com.example.Cart.entity.Product;
 import com.example.Cart.service.CartService;
 import com.example.Cart.service.ProductServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,8 @@ public class CartController {
     }
 
     @GetMapping
-    public ResponseEntity<Object> getProduct(@PathVariable Long id) {
+    public ResponseEntity<Product> getProduct(@PathVariable Long id) {
+
         return ResponseEntity.ok().body(productServiceClient.getProductById(id));
     }
 
