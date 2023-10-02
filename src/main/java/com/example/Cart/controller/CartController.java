@@ -12,11 +12,11 @@ public class CartController {
     @Autowired
     CartService cartService;
 
-    @PostMapping
-    public ResponseEntity<String> addToCart(@PathVariable Long userId, @PathVariable Long productId) {
-        cartService.addToCart(userId, productId);
-        return ResponseEntity.ok("Product da duoc them thanh cong");
-    }
+//    @PostMapping
+//    public ResponseEntity<String> addToCart(@PathVariable Long userId, @PathVariable Long productId) {
+//        cartService.addToCart(userId, productId);
+//        return ResponseEntity.ok("Product da duoc them thanh cong");
+//    }
 
     private final ProductServiceClient productServiceClient;
 
