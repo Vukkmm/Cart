@@ -13,13 +13,13 @@ public class CartController {
     @Autowired
     CartService cartService;
 
-//    @PostMapping
-//    public ResponseEntity<String> addToCart(@PathVariable Long userId, @PathVariable Long productId) {
-//        cartService.addToCart(userId, productId);
-//        return ResponseEntity.ok("Product da duoc them thanh cong");
-//    }
-
-    private final ProductServiceClient productServiceClient;
+    @PostMapping
+    public ResponseEntity<String> addToCart(@PathVariable Long userId, @PathVariable Long productId) {
+        cartService.addToCart(userId, productId);
+        return ResponseEntity.ok("Product da duoc them thanh cong");
+    }
+    @Autowired
+     ProductServiceClient productServiceClient;
 
     @Autowired
     public CartController(ProductServiceClient productServiceClient) {
@@ -28,8 +28,8 @@ public class CartController {
 
     @GetMapping
     public ResponseEntity<Product> getProduct(@PathVariable Long id) {
-
-        return ResponseEntity.ok().body(productServiceClient.getProductById(id));
+        Product product = productServiceClient.getProductById(id);
+        return ResponseEntity.ok().body(product);
     }
 
 }
